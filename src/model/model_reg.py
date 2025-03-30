@@ -10,7 +10,7 @@ import dagshub
 # # Set the tracking URI for MLflow to log the experiment in DagsHub
 # mlflow.set_tracking_uri("https://dagshub.com/mpaul7/end-to-end-mlops-1.mlflow") 
 
-dagshub_token = os.getenv("DAGSHUB_TOKEN")
+dagshub_token = os.getenv("DAGSHUB_TOKEN")DAGSHUB_TOKEN
 if not dagshub_token:
     raise ValueError("DAGSHUB_TOKEN is not set in the environment variables")
 
