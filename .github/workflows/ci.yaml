@@ -29,7 +29,7 @@ jobs:
 
       - name: Check Installed Packages
         run: pip list
-        
+
       - name: Set DAGSHUB_TOKEN environment variable
         run: echo "DAGSHUB_TOKEN=${{ secrets.DAGSHUB_TOKEN }}" >> $GITHUB_ENV
 
@@ -37,6 +37,7 @@ jobs:
         run: echo $DAGSHUB_TOKEN
 
       - name: Run DVC pipeline
-        run: |
+        env: 
           DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
+        run: |
           dvc repro
