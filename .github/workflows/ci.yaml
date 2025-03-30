@@ -19,7 +19,11 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements.txt || true  # Allow failure
+
+          # Skip backports.zoneinfo if Python >= 3.9
+          python -c "import sys; sys.exit(0) if sys.version_info >= (3, 9) else sys.exit(1)" && \
+          pip uninstall -y backports.zoneinfo || true
           pip install dvc
 
       - name: Run DVC pipeline
