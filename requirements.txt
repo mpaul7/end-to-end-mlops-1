@@ -160,7 +160,6 @@ treelib==1.7.1
 typer==0.15.2
 typing-extensions==4.13.0
 typing-inspect==0.9.0
-tzdata
 urllib3==2.2.3
 vine==5.1.0
 voluptuous==0.14.2
