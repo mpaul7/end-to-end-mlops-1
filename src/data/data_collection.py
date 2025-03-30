@@ -43,7 +43,7 @@ def save_data(df : pd.DataFrame, filepath: str) -> None:
     
 
 def main():
-    data_filepath = "/home/mpaul/projects/mpaul/mai/end-to-end-mlops-1/water_potability.csv"
+    data_filepath = "https://raw.githubusercontent.com/mpaul7/end-to-end-mlops-1/refs/heads/master/water_potability.csv"
     params_filepath = "params.yaml"
     raw_data_path = os.path.join("data","raw")
 # data_path = os.path.join("data","raw")
