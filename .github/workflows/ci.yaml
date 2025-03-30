@@ -26,6 +26,9 @@ jobs:
           python -c "import sys; sys.exit(0) if sys.version_info >= (3, 9) else sys.exit(1)" && \
           pip uninstall -y backports.zoneinfo || true
           pip install dvc
+          
+      - name: Check Installed Packages
+        run: pip list
 
       - name: Run DVC pipeline
         run: |
