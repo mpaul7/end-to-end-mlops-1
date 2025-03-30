@@ -5,8 +5,8 @@ stages:
     deps:
     - path: src/data/data_collection.py
       hash: md5
-      md5: 291dab389ddb98f9533cd8abf9068748
-      size: 2027
+      md5: 54c6a66d75750ea9c3ac793e24106932
+      size: 2055
     params:
       params.yaml:
         data_collection.test_size: 0.2
@@ -52,15 +52,15 @@ stages:
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: 1b7e1cc04749a8c1428bf95ec898d4b8
-      size: 73627787
+      md5: 1f366de69744c12a912ad1ac87e26424
+      size: 73577707
   model_eval:
     cmd: python src/model/model_eval.py
     deps:
     - path: models/model.pkl
       hash: md5
-      md5: 1b7e1cc04749a8c1428bf95ec898d4b8
-      size: 73627787
+      md5: 1f366de69744c12a912ad1ac87e26424
+      size: 73577707
     - path: src/model/model_eval.py
       hash: md5
       md5: 728d06e0217cebbca98fbebf5946d0b2
@@ -68,18 +68,18 @@ stages:
     outs:
     - path: reports/metrics.json
       hash: md5
-      md5: eb7f0a6bab920062e982610a1b6b8926
-      size: 145
+      md5: bf85e89443fa31729db24996712be7f7
+      size: 132
     - path: reports/run_info.json
       hash: md5
-      md5: 5fcd49c378e7c7bab3aaf8a52cffcf8a
+      md5: 99824ce9c0f93afeaad84cee6883c297
       size: 84
   model_registration:
     cmd: python src/model/model_reg.py
     deps:
     - path: reports/run_info.json
       hash: md5
-      md5: 5fcd49c378e7c7bab3aaf8a52cffcf8a
+      md5: 99824ce9c0f93afeaad84cee6883c297
       size: 84
     - path: src/model/model_reg.py
       hash: md5
