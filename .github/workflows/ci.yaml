@@ -32,4 +32,5 @@ jobs:
 
       - name: Run DVC pipeline
         run: |
+          DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
           dvc repro
