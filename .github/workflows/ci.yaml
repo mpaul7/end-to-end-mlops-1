@@ -20,7 +20,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt || true  # Allow failure
-          pip install pandas scikit-learn mlflow 
+          pip install pandas scikit-learn mlflow seaborn
 
           # Skip backports.zoneinfo if Python >= 3.9
           python -c "import sys; sys.exit(0) if sys.version_info >= (3, 9) else sys.exit(1)" && \
